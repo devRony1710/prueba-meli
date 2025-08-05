@@ -1,0 +1,16 @@
+.navbar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--color-yellow-meli);
+    color: var(--color-black-meli);
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
