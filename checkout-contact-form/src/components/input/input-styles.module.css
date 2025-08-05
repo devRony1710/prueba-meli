@@ -1,0 +1,42 @@
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+}
+
+.label {
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: transparent;
+    padding: 0px 8px;
+    border-radius: 8px;
+}
+
+.focused {
+    animation: slide-up 0.3s ease-in-out forwards;
+}
+
+.input {
+    border: 1px solid #c0c0c0;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+@keyframes slide-up {
+    from {
+        top: 10px;
+    }
+    to {
+        top: -30px;
+    }
+}
