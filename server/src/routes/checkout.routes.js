@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {getCheckoutInfo} from "../controllers/checkout.controller.js"
+import { getCheckoutInfo, nextStep } from "../controllers/checkout.controller.js"
 import { validateToken } from "../middleware/validate-token.js"
 
 const router = Router()
