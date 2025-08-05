@@ -1,0 +1,12 @@
+.form-info-title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-info-title-container p {
+    font-size: 1.8rem;
+    font-weight: semibold;
+    text-align: center;
+    line-height: auto;
+}
