@@ -1,4 +1,4 @@
-import styles from "./form-info-title-styles.module.css";
+import styles from './form-info-title-styles.module.css';
 
 export const FormInfoTitle = () => {
   return (
