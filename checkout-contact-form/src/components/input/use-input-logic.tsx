@@ -3,6 +3,7 @@ import type { InputLogicInterface } from "./input.types"
 
 export const useInputLogic = (): InputLogicInterface => {
     const [isFocused, setIsFocused] = useState<boolean>(false)
+    const [inputValue, setInputValue] = useState<string | number>("")
 
     const handleFocus = () => {
         setIsFocused(true)
@@ -10,9 +11,16 @@ export const useInputLogic = (): InputLogicInterface => {
     const handleBlur = () => {
         setIsFocused(false)
     }
+
+const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value)
+}
+
     return {
         isFocused,
         handleFocus,
-        handleBlur
+        handleBlur,
+        handleOnChange,
+        inputValue
     }
 }

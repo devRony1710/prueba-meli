@@ -1,0 +1,8 @@
+.checkout-info-container {
+    height: 100vdh;
+    width: 100vdw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
