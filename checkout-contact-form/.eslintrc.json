@@ -1,0 +1,33 @@
+{
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      // Aquí puedes tener otras configuraciones como "eslint:recommended", "react-app", etc.
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      
+      // Esta es la línea clave: debe ser la última de la lista
+      "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react",
+      "@typescript-eslint"
+    ],
+    "rules": {
+      // Aquí puedes agregar tus propias reglas, pero no las de formato.
+      // Por ejemplo:
+      // "no-console": "warn",
+      // "quotes": ["error", "single"] <-- ¡Elimina esta si la tienes!
+    }
+  }

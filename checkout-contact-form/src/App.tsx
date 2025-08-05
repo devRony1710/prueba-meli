@@ -1,11 +1,8 @@
-import './App.css'
-import { CheckoutInfo } from '@/pages/checkout-info/checkout-info'
+import './App.css';
+import { CheckoutInfo } from '@/pages/checkout-info/checkout-info';
 
 function App() {
-
-  return (
-    <CheckoutInfo />
-  )
+  return <CheckoutInfo />;
 }
 
-export default App
+export default App;
