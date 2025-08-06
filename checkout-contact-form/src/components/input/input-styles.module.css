@@ -38,6 +38,8 @@
         top: 10px;
     }
     to {
-        top: -30px;
+        top: -20px;
+        left: -4px;
+        font-size: 12px;
     }
 }
