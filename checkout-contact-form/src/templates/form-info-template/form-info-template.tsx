@@ -3,6 +3,7 @@ import styles from './form-info-template-styles.module.css';
 import { Selector } from '@/components/selector/selector';
 import { lazy, Suspense, useRef } from 'react';
 import { LoadingCircle } from '@/components/loading-circle/loading-circle';
+import { Button } from '@/components/button/button';
 
 const ReCAPTCHA = lazy(() => import('react-google-recaptcha'));
 
@@ -34,7 +35,10 @@ export const FormInfoTemplate = () => {
         />
       </Suspense>
 
-      <button type="submit">Submit</button>
+      <div className={styles['form-buttons-container']}>
+        <Button type="button" label="Cancel" />
+        <Button label="Submit" disabled={true} />
+      </div>
     </form>
   );
 };
