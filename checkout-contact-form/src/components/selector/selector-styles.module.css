@@ -1,0 +1,71 @@
+.selector-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+}
+
+.selector-button {
+    border: 1px solid #c0c0c0;
+    border-radius: 8px;
+    padding: 0 8px;
+    height: 40px;
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.selector-options-container-open {
+    display: flex;
+    animation: slide-up 0.3s ease-in-out forwards;
+}
+
+.selector-options-container-close {
+    display: none;
+    animation: slide-down 0.3s ease-in-out forwards;
+}
+
+.selector-options-container {
+    flex-direction: column;
+    padding: 8px;
+    gap: 8px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #c0c0c0;
+    border-radius: 8px;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.selector-option-button {
+    border: 1px solid #c0c0c0;
+    border-radius: 8px;
+    padding: 0 8px;
+    height: 40px;
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.selector-option-button:hover {
+    cursor: pointer;
+    background-color: var(--color-yellow-meli);
+}
+
+@keyframes slide-up {
+    from {
+        top: 40px;
+    }
+    to {
+        top: 48px;
+    }
+}
