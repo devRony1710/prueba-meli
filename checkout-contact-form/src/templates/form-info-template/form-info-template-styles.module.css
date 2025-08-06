@@ -12,3 +12,10 @@
     align-items: center;
     gap: 1.8rem;
 }
+
+@media (max-width: 768px) {
+    .form-info-template {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
