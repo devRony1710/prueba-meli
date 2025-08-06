@@ -5,6 +5,7 @@ export interface InputProps extends HtmlHTMLAttributes<HTMLInputElement> {
     name: string;
     type: string;
     maxLength?: number;
+    errorMessage?: string;
 }
 
 export interface InputLogicInterface {

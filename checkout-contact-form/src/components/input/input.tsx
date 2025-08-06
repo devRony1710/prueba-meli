@@ -3,7 +3,7 @@ import type { InputProps } from './input.types';
 import styles from './input-styles.module.css';
 import { useInputLogic } from './use-input-logic';
 
-export const Input: FC<InputProps> = ({ label, name, type, maxLength, ...props }) => {
+export const Input: FC<InputProps> = ({ label, name, type, maxLength, errorMessage, ...props }) => {
   const { isFocused, handleFocus, handleBlur, handleOnChange, inputValue } =
     useInputLogic(type);
 
@@ -28,6 +28,7 @@ export const Input: FC<InputProps> = ({ label, name, type, maxLength, ...props }
         max={maxLength}
         {...props}
       />
+      {errorMessage && <span className={styles['error-message']}>{errorMessage}</span>}
     </div>
   );
 };

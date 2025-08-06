@@ -34,6 +34,15 @@
     height: 40px;
 }
 
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    position: absolute;
+    bottom: -14px;
+    left: 4px;
+}
+
 .input:focus {
     outline: none;
 }
