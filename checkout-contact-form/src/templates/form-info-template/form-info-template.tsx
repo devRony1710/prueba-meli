@@ -5,6 +5,7 @@ export const FormInfoTemplate = () => {
   return (
     <form className={styles['form-info-template']}>
       <Input label="Nombre" name="name" type="text" />
+      <Input label="Address" name="address" type="text" />
     </form>
   );
 };
