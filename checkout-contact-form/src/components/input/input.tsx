@@ -10,7 +10,7 @@ export const Input: FC<InputProps> = ({ label, name, type }) => {
   return (
     <div className={styles['input-container']}>
       <label
-        className={`${styles['label']} ${inputValue || isFocused ? styles['focused'] : ''}`}
+        className={`${styles['label']} ${inputValue || isFocused ? styles['focused'] : styles['not-focused']}`}
         htmlFor={name}
       >
         {label}

@@ -22,6 +22,10 @@
     animation: slide-up 0.3s ease-in-out forwards;
 }
 
+.not-focused {
+    animation: slide-down 0.3s ease-in-out forwards;
+}
+
 .input {
     border: 1px solid #c0c0c0;
     border-radius: 8px;
@@ -33,9 +37,23 @@
     outline: none;
 }
 
+@keyframes slide-down {
+    from {
+        top: -20px;
+        left: -4px;
+    }
+    to {
+        top: 10px;
+        left: 0px;
+        font-size: 14px;
+    }
+}
+
 @keyframes slide-up {
     from {
         top: 10px;
+        left: 0px;
+        font-size: 14px;
     }
     to {
         top: -20px;
