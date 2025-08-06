@@ -10,9 +10,10 @@ export const FormInfoTemplate = () => {
 
   return (
     <form className={styles['form-info-template']} onSubmit={handleOnSubmit}>
-      <Input label="Nombre" name="name" type="text" />
+      <Input label="First Name" name="name" type="text" />
       <Selector />
       <Input label="Address" name="address" type="text" />
+      <Input label="Phone" name="phone" type="text" maxLength={10}  />
     </form>
   );
 };

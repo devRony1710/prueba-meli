@@ -5,17 +5,18 @@
     width: 100%;
     max-width: 380px;
     position: relative;
+    height: 40px;
 }
 
 .label {
     position: absolute;
-    top: 10px;
     left: 8px;
     font-size: 14px;
     font-weight: 500;
     background-color: transparent;
     padding: 0px 8px;
     border-radius: 8px;
+    cursor: text;
 }
 
 .focused {

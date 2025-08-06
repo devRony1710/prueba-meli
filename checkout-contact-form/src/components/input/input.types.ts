@@ -1,7 +1,10 @@
-export interface InputProps {
+import type { HtmlHTMLAttributes } from "react";
+
+export interface InputProps extends HtmlHTMLAttributes<HTMLInputElement> {
     label: string;
     name: string;
     type: string;
+    maxLength?: number;
 }
 
 export interface InputLogicInterface {

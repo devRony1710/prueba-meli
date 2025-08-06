@@ -3,9 +3,9 @@ import type { InputProps } from './input.types';
 import styles from './input-styles.module.css';
 import { useInputLogic } from './use-input-logic';
 
-export const Input: FC<InputProps> = ({ label, name, type }) => {
+export const Input: FC<InputProps> = ({ label, name, type, maxLength, ...props }) => {
   const { isFocused, handleFocus, handleBlur, handleOnChange, inputValue } =
-    useInputLogic();
+    useInputLogic(type);
 
   return (
     <div className={styles['input-container']}>
@@ -16,6 +16,7 @@ export const Input: FC<InputProps> = ({ label, name, type }) => {
         {label}
       </label>
       <input
+        id={name}
         className={styles['input']}
         type={type}
         name={name}
@@ -23,6 +24,9 @@ export const Input: FC<InputProps> = ({ label, name, type }) => {
         onBlur={handleBlur}
         onChange={handleOnChange}
         value={inputValue}
+        maxLength={maxLength}
+        max={maxLength}
+        {...props}
       />
     </div>
   );
