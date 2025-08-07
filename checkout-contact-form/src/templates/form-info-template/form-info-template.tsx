@@ -31,10 +31,6 @@ export const FormInfoTemplate: FC<FormInfoTemplateProps> = ({
     countries,
   } = useFormInfo({ referrer, token, userData });
 
-  console.log(isValid, "isValid");
-  console.log(captchaVerified, "captchaVerified");
-  console.log(isValidParams, "isValidParams");
-
   const countriesOptions = countries.map((country) => ({
     value: country.code,
     label: country.name,

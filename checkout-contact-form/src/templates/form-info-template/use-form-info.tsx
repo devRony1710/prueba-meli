@@ -77,7 +77,7 @@ export const useFormInfo = ({
     const captchaValue = recaptchaRef.current?.getValue();
 
     if (!captchaValue) {
-      console.log('Please verify the reCAPTCHA');
+      console.error('Please verify the reCAPTCHA');
       return;
     }
 

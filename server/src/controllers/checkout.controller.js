@@ -16,9 +16,6 @@ export const getCheckoutInfo = (req, res) => {
         })
     }
 
-    //Quitar luego
-    console.log(`[ABUSE CHECK] Acceso desde referrer "${referrer}" con token "${token}"`);
-
     const checkoutInfo = {
         referrer,
         token
@@ -42,9 +39,6 @@ export const nextStep = (req, res) => {
             message: "Missing referrer or token"
         })
     }
-
-    //Quitar luego
-    console.log(`[CHECKOUT] Usuario va a continuar con: ${referrer}, token: ${token}`);
 
     res.json({
         success: true,
