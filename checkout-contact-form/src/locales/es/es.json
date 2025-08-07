@@ -10,5 +10,9 @@
     "submitButton": "Enviar",
     "previousPageTitle": "Página anterior al checkout",
     "previousPageButtonGoToCheckout": "Ir al checkout",
-    "previousPageButtonGoToCheckoutUser": "Ir al checkout user"
+    "previousPageButtonGoToCheckoutUser": "Ir al checkout user",
+    "checkoutSuccessTitle": "Checkout exitoso",
+    "checkoutSuccessButton": "Volver al inicio",
+    "pageNotFound": "Página no encontrada",
+    "backToHome": "Volver al inicio"
 }

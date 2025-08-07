@@ -10,5 +10,9 @@
     "submitButton": "Submit",
     "previousPageTitle": "Previous page to checkout",
     "previousPageButtonGoToCheckout": "Go to checkout",
-    "previousPageButtonGoToCheckoutUser": "Go to checkout user"
+    "previousPageButtonGoToCheckoutUser": "Go to checkout user",
+    "checkoutSuccessTitle": "Checkout success",
+    "checkoutSuccessButton": "Go to home",
+    "pageNotFound": "Page not found",
+    "backToHome": "Back to home"
 }
