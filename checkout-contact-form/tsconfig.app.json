@@ -16,7 +16,6 @@
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "jsx": "react-jsx",
-    "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": false,
     "outDir": "dist",
@@ -31,5 +30,5 @@
     "noUncheckedSideEffectImports": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["dist", "node_modules"]
 }
