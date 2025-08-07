@@ -1,5 +1,6 @@
 import { z } from "zod";
 import type { Control, FieldErrors } from "react-hook-form";
+import type { GetCountriesListResponse } from "@/api/get/get-countries-list/get-countries-list.types";
 
 export interface UseFormInfoLogicInterface {
     recaptchaRef: React.RefObject<any>;
@@ -21,6 +22,7 @@ export interface UseFormInfoLogicInterface {
     }>
     captchaVerified: boolean;
     handleCaptchaVerify: () => void;
+    countries: GetCountriesListResponse[];
 }
 
 export const formSchema = z.object({

@@ -1,7 +1,7 @@
 import { Input } from '@/components/input/input';
 import styles from './form-info-template-styles.module.css';
 import { Selector } from '@/components/selector/selector';
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense } from 'react';
 import { LoadingCircle } from '@/components/loading-circle/loading-circle';
 import { Button } from '@/components/button/button';
 import { useFormInfo } from './use-form-info';
@@ -9,8 +9,6 @@ import { Controller } from 'react-hook-form';
 const ReCAPTCHA = lazy(() => import('react-google-recaptcha'));
 
 export const FormInfoTemplate = () => {
-  const [countries, setCountries] = useState([]);
-  console.log(countries);
   const {
     recaptchaRef,
     handleOnSubmit,
@@ -19,24 +17,13 @@ export const FormInfoTemplate = () => {
     errors,
     handleCaptchaVerify,
     captchaVerified,
+    countries,
   } = useFormInfo();
 
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await fetch('http://localhost:3000/api/countries', {
-          headers: {
-            token: '123',
-          },
-        });
-        const data = await response.json();
-        setCountries(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchCountries();
-  }, []);
+  const countriesOptions = countries.map((country) => ({
+    value: country.code,
+    label: country.name,
+  }));
 
   return (
     <form className={styles['form-info-template']} onSubmit={handleOnSubmit}>
@@ -52,7 +39,7 @@ export const FormInfoTemplate = () => {
           />
         )}
       />
-      <Selector />
+      <Selector options={countriesOptions} />
       <Controller
         control={control}
         name="address"

@@ -1,13 +1,8 @@
 import styles from './selector-styles.module.css';
 import { useSelectorLogic } from './use-selector-logic';
+import type { SelectorOptionType } from './selector.types';
 
-const options = [
-  { value: 'option1', label: 'Option 1' },
-  { value: 'option2', label: 'Option 2' },
-  { value: 'option3', label: 'Option 3' },
-];
-
-export const Selector = () => {
+export const Selector = ({ options }: { options: SelectorOptionType[] }) => {
   const { isOpen, selectedOption, toggleDropdown, handleSelectOption } =
     useSelectorLogic();
 

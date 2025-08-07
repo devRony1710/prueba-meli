@@ -8,4 +8,5 @@ export interface UseSelectorLogicInterface {
     selectedOption: SelectorOptionType | null;
     toggleDropdown: () => void;
     handleSelectOption: (option: SelectorOptionType) => void;
+    options: SelectorOptionType[];
 }

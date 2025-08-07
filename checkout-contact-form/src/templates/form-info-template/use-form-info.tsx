@@ -6,10 +6,17 @@ import {
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { getCountriesList } from '@/api/get/get-countries-list/get-countries-list';
+import { useQuery } from '@tanstack/react-query';
 
 export const useFormInfo = (): UseFormInfoLogicInterface => {
   const recaptchaRef = useRef<any>(null);
   const [captchaVerified, setCaptchaVerified] = useState(false);
+
+  const { data: countries } = useQuery({
+    queryKey: ['countries'],
+    queryFn: () => getCountriesList(),
+  });
 
   const {
     formState: { isValid, errors },
@@ -43,5 +50,6 @@ export const useFormInfo = (): UseFormInfoLogicInterface => {
     errors,
     captchaVerified,
     handleCaptchaVerify,
+    countries: countries ?? [],
   };
 };
