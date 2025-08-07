@@ -41,6 +41,7 @@ export const useFormInfo = ({
           address: watch('address'),
           phone: watch('phone'),
           country: watch('country').value,
+          captchaToken: recaptchaRef.current?.getValue(),
         },
         referrer,
         token,

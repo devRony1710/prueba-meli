@@ -31,7 +31,7 @@ export const getCheckoutInfo = (req, res) => {
 // Aqui estamos redirigiendo al usuario al siguiente paso
 export const nextStep = (req, res) => {
     const {referrer, token} = req.query
-    const {name, address, phone, country} = req.body
+    const {name, address, phone, country, captchaToken} = req.body
 
     if(!referrer || !token) {
         return res.status(400).json({
@@ -49,7 +49,8 @@ export const nextStep = (req, res) => {
             name,
             address,
             phone,
-            country
+            country,
+            captchaToken
         }
     })
 }

@@ -7,4 +7,5 @@ export interface ResponseUserInfo {
         label: string;
     };
     token: string;
+    captchaToken: string;
 }

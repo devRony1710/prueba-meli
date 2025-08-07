@@ -3,6 +3,7 @@ export type FormInfoType = {
     address: string;
     phone: string;
     country: string;
+    captchaToken: string;
 }
 
 export interface SendFormInfoProps {
