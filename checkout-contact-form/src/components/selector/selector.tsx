@@ -3,7 +3,7 @@ import { useSelectorLogic } from './use-selector-logic';
 import type { SelectorProps } from './selector.types';
 import { useTranslation } from 'react-i18next';
 
-export const Selector = ({ options, onChange, value }: SelectorProps) => {
+export const Selector = ({ options, onChange, value, defaultValue }: SelectorProps) => {
   const { isOpen, toggleDropdown } = useSelectorLogic();
   const { t } = useTranslation();
 
@@ -15,7 +15,7 @@ export const Selector = ({ options, onChange, value }: SelectorProps) => {
         onClick={toggleDropdown}
         className={styles['selector-button']}
       >
-        <p>{value || t('selectAnOption')}</p>
+        <p>{value || defaultValue?.label || t('selectAnOption')}</p>
       </button>
 
       <div

@@ -12,4 +12,5 @@ export interface SelectorProps {
     options: SelectorOptionType[];
     onChange: (option: SelectorOptionType) => void;
     value: string;
+    defaultValue?: SelectorOptionType;
 }

@@ -7,7 +7,8 @@ import { CheckoutSuccess } from '../pages/checkout-success/checkout-success';
 const AppRoutes = () => {
   const routes = useRoutes([
     { path: '/', element: <PreviousPage /> },
-    { path: '/checkout', element: <CheckoutInfo /> },
+    { path: '/checkout', element: <CheckoutInfo userMock={false} /> },
+    { path: '/checkout/user-mock', element: <CheckoutInfo userMock={true} /> },
     { path: '/checkout-success', element: <CheckoutSuccess /> },
     { path: '*', element: <NotFound /> },
   ]);

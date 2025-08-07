@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type { Control, FieldErrors, UseFormWatch } from "react-hook-form";
 import type { GetCountriesListResponse } from "@/api/get/get-countries-list/get-countries-list.types";
+import type { ResponseUserInfo } from "@/api/get/get-user-info/get-user-info.types";
 
 export interface UseFormInfoLogicInterface {
     recaptchaRef: React.RefObject<any>;
@@ -60,4 +61,5 @@ export interface FormInfoTemplateProps {
     referrer: string;
     token: string;
     isValidParams: boolean;
+    userData: ResponseUserInfo;
 }

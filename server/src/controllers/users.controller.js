@@ -3,9 +3,12 @@ export const getUserInfo = (req, res) => {
 
     const userInfo = {
         name: "John Doe",
-        phone: "123456789",
+        phone: "1234567891",
         address: "123 Main St, Anytown, BR",
-        country: "BR",
+        country: {
+            value: "BR",
+            label: "Brazil"
+        },
         token: token
     };
         

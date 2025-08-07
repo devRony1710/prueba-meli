@@ -3,14 +3,21 @@ import type { InputProps } from './input.types';
 import styles from './input-styles.module.css';
 import { useInputLogic } from './use-input-logic';
 
-export const Input: FC<InputProps> = ({ label, name, type, maxLength, errorMessage, ...props }) => {
+export const Input: FC<InputProps> = ({
+  label,
+  name,
+  type,
+  maxLength,
+  errorMessage,
+  ...props
+}) => {
   const { isFocused, handleFocus, handleBlur, handleOnChange, inputValue } =
     useInputLogic(type);
 
   return (
     <div className={styles['input-container']}>
       <label
-        className={`${styles['label']} ${inputValue || isFocused ? styles['focused'] : styles['not-focused']}`}
+        className={`${styles['label']} ${props.defaultValue || inputValue || isFocused ? styles['focused'] : styles['not-focused']}`}
         htmlFor={name}
       >
         {label}
@@ -26,9 +33,12 @@ export const Input: FC<InputProps> = ({ label, name, type, maxLength, errorMessa
         value={inputValue}
         maxLength={maxLength}
         max={maxLength}
+        defaultValue={props.defaultValue}
         {...props}
       />
-      {errorMessage && <span className={styles['error-message']}>{errorMessage}</span>}
+      {errorMessage && (
+        <span className={styles['error-message']}>{errorMessage}</span>
+      )}
     </div>
   );
 };

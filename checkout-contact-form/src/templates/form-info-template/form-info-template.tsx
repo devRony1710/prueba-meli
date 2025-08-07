@@ -15,6 +15,7 @@ export const FormInfoTemplate: FC<FormInfoTemplateProps> = ({
   referrer,
   token,
   isValidParams,
+  userData,
 }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -28,7 +29,11 @@ export const FormInfoTemplate: FC<FormInfoTemplateProps> = ({
     handleCaptchaVerify,
     captchaVerified,
     countries,
-  } = useFormInfo({ referrer, token });
+  } = useFormInfo({ referrer, token, userData });
+
+  console.log(isValid, "isValid");
+  console.log(captchaVerified, "captchaVerified");
+  console.log(isValidParams, "isValidParams");
 
   const countriesOptions = countries.map((country) => ({
     value: country.code,
@@ -46,6 +51,7 @@ export const FormInfoTemplate: FC<FormInfoTemplateProps> = ({
             label={t('firstNameLabel')}
             type="text"
             errorMessage={errors.name?.message}
+            defaultValue={userData?.name}
           />
         )}
       />
@@ -57,6 +63,7 @@ export const FormInfoTemplate: FC<FormInfoTemplateProps> = ({
             options={countriesOptions}
             onChange={field?.onChange}
             value={field?.value?.label}
+            defaultValue={{ value: userData?.country?.value, label: userData?.country?.label }}
           />
         )}
       />
@@ -70,6 +77,7 @@ export const FormInfoTemplate: FC<FormInfoTemplateProps> = ({
             name="address"
             type="text"
             errorMessage={errors.address?.message}
+            defaultValue={userData?.address}
           />
         )}
       />
@@ -84,6 +92,7 @@ export const FormInfoTemplate: FC<FormInfoTemplateProps> = ({
             type="text"
             maxLength={10}
             errorMessage={errors.phone?.message}
+            defaultValue={userData?.phone}
           />
         )}
       />

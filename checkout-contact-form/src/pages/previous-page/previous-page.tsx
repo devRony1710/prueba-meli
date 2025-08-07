@@ -9,6 +9,10 @@ export const PreviousPage = () => {
   const navigateToCheckout = () => {
     navigate('/checkout?referrer=previous-page&token=123456789');
   };
+
+  const navigateToCheckoutUserMock = () => {
+    navigate('/checkout/user-mock?referrer=previous-page&token=123456789');
+  };
   
   return (
     <section className={styles['previous-page-container']}>
@@ -18,6 +22,7 @@ export const PreviousPage = () => {
         <h1 className={styles['previous-page-title']}>Previous Page</h1>
 
         <Button label="Go to Checkout" onClick={navigateToCheckout} />
+        <Button label="Go to Checkout User" onClick={navigateToCheckoutUserMock} />
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   formSchema,
   type UseFormInfoLogicInterface,
@@ -12,13 +12,16 @@ import { GET_COUNTRIES_LIST_KEY } from '@/common/request-contants/request-contan
 import { useMutation } from '@tanstack/react-query';
 import { sendFormInfo } from '@/api/post/send-form-info/send-form-info';
 import { useNavigate } from 'react-router-dom';
+import type { ResponseUserInfo } from '@/api/get/get-user-info/get-user-info.types';
 
 export const useFormInfo = ({
   referrer,
   token,
+  userData,
 }: {
   referrer: string;
   token: string;
+  userData: ResponseUserInfo;
 }): UseFormInfoLogicInterface => {
   const recaptchaRef = useRef<any>(null);
   const [captchaVerified, setCaptchaVerified] = useState(false);
@@ -52,11 +55,21 @@ export const useFormInfo = ({
 
   const {
     watch,
+    reset,
     formState: { isValid, errors },
     control,
   } = useForm<z.infer<typeof formSchema>>({
     mode: 'all',
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: userData?.name ?? '',
+      address: userData?.address ?? '',
+      phone: userData?.phone ?? '',
+      country: {
+        value: userData?.country?.value ?? '',
+        label: userData?.country?.label ?? '',
+      },
+    },
   });
 
   const handleOnSubmit = (e: React.FormEvent) => {
@@ -70,6 +83,20 @@ export const useFormInfo = ({
 
     mutate();
   };
+
+  useEffect(() => {
+    if (userData) {
+      reset({
+        name: userData?.name ?? '',
+        address: userData?.address ?? '',
+        phone: userData?.phone ?? '',
+        country: {
+          value: userData?.country?.value ?? '',
+          label: userData?.country?.label ?? '',
+        },
+      });
+    }
+  }, [userData]);
 
   const handleCaptchaVerify = () => {
     setCaptchaVerified(true);

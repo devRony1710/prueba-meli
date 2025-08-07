@@ -6,8 +6,9 @@ import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getValidateReferrerToken } from '@/api/get/validate-referrer-token/get-validate-referrer-token';
 import { useNavigate } from 'react-router-dom';
+import { getUserInfo } from '@/api/get/get-user-info/get-user-info';
 
-export const CheckoutInfo = () => {
+export const CheckoutInfo = ({ userMock }: { userMock?: boolean }) => {
   const navigate = useNavigate();
   const searchParams = new URLSearchParams(window.location.search);
   const referrerParam = searchParams.get('referrer');
@@ -20,6 +21,12 @@ export const CheckoutInfo = () => {
     queryKey: ['validate-referrer-token', referrerParam, tokenParam],
     queryFn: () =>
       getValidateReferrerToken(referrerParam as string, tokenParam as string),
+  });
+
+  const { data: userData } = useQuery({
+    queryKey: ['user-info', referrerParam, tokenParam, userMock],
+    queryFn: () => getUserInfo(tokenParam as string, referrerParam as string),
+    enabled: !!userMock,
   });
 
   useEffect(() => {
@@ -51,6 +58,16 @@ export const CheckoutInfo = () => {
         referrer={referrer}
         token={token}
         isValidParams={!!data?.success}
+        userData={{
+          name: userData?.name ?? '',
+          phone: userData?.phone ?? '',
+          address: userData?.address ?? '',
+          country: {
+            value: userData?.country?.value ?? '',
+            label: userData?.country?.label ?? '',
+          },
+          token: userData?.token ?? '',
+        }}
       />
     </section>
   );
