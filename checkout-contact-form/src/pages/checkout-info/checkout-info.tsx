@@ -30,7 +30,13 @@ export const CheckoutInfo = () => {
   }, [data]);
 
   useEffect(() => {
-    if ((referrerParam === "" || referrerParam === null || tokenParam === "" || tokenParam === null) && !data?.success) {
+    if (
+      (referrerParam === '' ||
+        referrerParam === null ||
+        tokenParam === '' ||
+        tokenParam === null) &&
+      !data?.success
+    ) {
       navigate('/404');
     }
   }, [referrerParam, tokenParam, data?.success]);
@@ -41,7 +47,11 @@ export const CheckoutInfo = () => {
 
       <FormInfoTitle />
 
-      <FormInfoTemplate referrer={referrer} token={token} isValidParams={!!data?.success} />
+      <FormInfoTemplate
+        referrer={referrer}
+        token={token}
+        isValidParams={!!data?.success}
+      />
     </section>
   );
 };

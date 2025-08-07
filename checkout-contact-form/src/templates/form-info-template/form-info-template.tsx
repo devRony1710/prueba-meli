@@ -96,7 +96,11 @@ export const FormInfoTemplate: FC<FormInfoTemplateProps> = ({
       </Suspense>
 
       <div className={styles['form-buttons-container']}>
-        <Button type="button" label={t('cancelButton')} onClick={() => navigate(-1)} />
+        <Button
+          type="button"
+          label={t('cancelButton')}
+          onClick={() => navigate(-1)}
+        />
         <Button
           label={t('submitButton')}
           disabled={!isValid || !captchaVerified || !isValidParams}
