@@ -1,19 +1,21 @@
 import styles from './selector-styles.module.css';
 import { useSelectorLogic } from './use-selector-logic';
 import type { SelectorProps } from './selector.types';
+import { useTranslation } from 'react-i18next';
 
 export const Selector = ({ options, onChange, value }: SelectorProps) => {
   const { isOpen, toggleDropdown } = useSelectorLogic();
+  const { t } = useTranslation();
 
   return (
     <div className={styles['selector-container']}>
-      <span className={styles['selector-span']}>Country</span>
+      <span className={styles['selector-span']}>{t('countryLabel')}</span>
       <button
         type="button"
         onClick={toggleDropdown}
         className={styles['selector-button']}
       >
-        <p>{value || 'Seleccione una opción'}</p>
+        <p>{value || t('selectAnOption')}</p>
       </button>
 
       <div

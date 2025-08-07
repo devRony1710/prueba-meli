@@ -1,4 +1,11 @@
 {
     "formTitle": "We're almost there...",
-    "formSubtitle": "Update your contact data"
+    "formSubtitle": "Update your contact data",
+    "firstNameLabel": "First name",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "countryLabel": "Country",
+    "selectAnOption": "Select an option",
+    "cancelButton": "Cancel",
+    "submitButton": "Submit"
 }

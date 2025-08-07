@@ -12,13 +12,13 @@ const resources = {
 };
 
 i18n
-  .use(LanguageDetector) // detecta el idioma del navegador
-  .use(initReactI18next) // pasa i18n a react-i18next
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: "en", // idioma por defecto si no detecta ninguno
+    fallbackLng: "en",
     interpolation: {
-      escapeValue: false, // React ya hace escape
+      escapeValue: false,
     },
   });
 

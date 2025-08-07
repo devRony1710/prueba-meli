@@ -7,8 +7,11 @@ import { Button } from '@/components/button/button';
 import { useFormInfo } from './use-form-info';
 import { Controller } from 'react-hook-form';
 const ReCAPTCHA = lazy(() => import('react-google-recaptcha'));
+import { useTranslation } from 'react-i18next';
 
 export const FormInfoTemplate = () => {
+  const { t } = useTranslation();
+
   const {
     recaptchaRef,
     handleOnSubmit,
@@ -33,7 +36,7 @@ export const FormInfoTemplate = () => {
         render={({ field }) => (
           <Input
             {...field}
-            label="First Name"
+            label={t('firstNameLabel')}
             type="text"
             errorMessage={errors.name?.message}
           />
@@ -56,7 +59,7 @@ export const FormInfoTemplate = () => {
         render={({ field }) => (
           <Input
             {...field}
-            label="Address"
+            label={t('addressLabel')}
             name="address"
             type="text"
             errorMessage={errors.address?.message}
@@ -69,7 +72,7 @@ export const FormInfoTemplate = () => {
         render={({ field }) => (
           <Input
             {...field}
-            label="Phone"
+            label={t('phoneLabel')}
             name="phone"
             type="text"
             maxLength={10}
@@ -86,8 +89,8 @@ export const FormInfoTemplate = () => {
       </Suspense>
 
       <div className={styles['form-buttons-container']}>
-        <Button type="button" label="Cancel" />
-        <Button label="Submit" disabled={!isValid || !captchaVerified} />
+        <Button type="button" label={t('cancelButton')} />
+        <Button label={t('submitButton')} disabled={!isValid || !captchaVerified} />
       </div>
     </form>
   );

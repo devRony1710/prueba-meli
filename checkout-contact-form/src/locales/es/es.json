@@ -1,4 +1,11 @@
 {
     "formTitle": "Ya casi estamos",
-    "formSubtitle": "Actualiza tus datos de contacto"
+    "formSubtitle": "Actualiza tus datos de contacto",
+    "firstNameLabel": "Nombre",
+    "addressLabel": "Dirección",
+    "phoneLabel": "Teléfono",
+    "countryLabel": "País",
+    "selectAnOption": "Selecciona una opción",
+    "cancelButton": "Cancelar",
+    "submitButton": "Enviar"
 }
