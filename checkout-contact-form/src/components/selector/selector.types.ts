@@ -5,8 +5,11 @@ export type SelectorOptionType = {
 
 export interface UseSelectorLogicInterface {
     isOpen: boolean;
-    selectedOption: SelectorOptionType | null;
     toggleDropdown: () => void;
-    handleSelectOption: (option: SelectorOptionType) => void;
+}
+
+export interface SelectorProps {
     options: SelectorOptionType[];
+    onChange: (option: SelectorOptionType) => void;
+    value: string;
 }

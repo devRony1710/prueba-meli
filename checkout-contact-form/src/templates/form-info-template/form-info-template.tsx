@@ -39,7 +39,17 @@ export const FormInfoTemplate = () => {
           />
         )}
       />
-      <Selector options={countriesOptions} />
+      <Controller
+        control={control}
+        name="country"
+        render={({ field }) => (
+          <Selector
+            options={countriesOptions}
+            onChange={field?.onChange}
+            value={field?.value?.label}
+          />
+        )}
+      />
       <Controller
         control={control}
         name="address"

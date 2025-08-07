@@ -1,10 +1,9 @@
 import styles from './selector-styles.module.css';
 import { useSelectorLogic } from './use-selector-logic';
-import type { SelectorOptionType } from './selector.types';
+import type { SelectorProps } from './selector.types';
 
-export const Selector = ({ options }: { options: SelectorOptionType[] }) => {
-  const { isOpen, selectedOption, toggleDropdown, handleSelectOption } =
-    useSelectorLogic();
+export const Selector = ({ options, onChange, value }: SelectorProps) => {
+  const { isOpen, toggleDropdown } = useSelectorLogic();
 
   return (
     <div className={styles['selector-container']}>
@@ -13,7 +12,7 @@ export const Selector = ({ options }: { options: SelectorOptionType[] }) => {
         onClick={toggleDropdown}
         className={styles['selector-button']}
       >
-        <p>{selectedOption?.label || 'Seleccione una opción'}</p>
+        <p>{value || 'Seleccione una opción'}</p>
       </button>
 
       <div
@@ -24,7 +23,7 @@ export const Selector = ({ options }: { options: SelectorOptionType[] }) => {
             className={styles['selector-option-button']}
             type="button"
             key={option.value}
-            onClick={() => handleSelectOption(option)}
+            onClick={() => onChange(option)}
           >
             {option.label}
           </button>

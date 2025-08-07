@@ -8,17 +8,19 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { getCountriesList } from '@/api/get/get-countries-list/get-countries-list';
 import { useQuery } from '@tanstack/react-query';
+import { GET_COUNTRIES_LIST_KEY } from '@/common/request-contants/request-contants';
 
 export const useFormInfo = (): UseFormInfoLogicInterface => {
   const recaptchaRef = useRef<any>(null);
   const [captchaVerified, setCaptchaVerified] = useState(false);
 
   const { data: countries } = useQuery({
-    queryKey: ['countries'],
+    queryKey: [GET_COUNTRIES_LIST_KEY],
     queryFn: () => getCountriesList(),
   });
 
   const {
+    watch,
     formState: { isValid, errors },
     control,
   } = useForm<z.infer<typeof formSchema>>({
@@ -51,5 +53,6 @@ export const useFormInfo = (): UseFormInfoLogicInterface => {
     captchaVerified,
     handleCaptchaVerify,
     countries: countries ?? [],
+    watch,
   };
 };
