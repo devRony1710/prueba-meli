@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "clean": "find ./src -type f \\( -name '*.js' -o -name '*.d.ts' -o -name '*.js.map' \\) -delete",
-    "build:dev": "yarn clean && vite build --mode development",
+    "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
   },
