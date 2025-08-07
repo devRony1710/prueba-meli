@@ -7,6 +7,7 @@ export const Selector = ({ options, onChange, value }: SelectorProps) => {
 
   return (
     <div className={styles['selector-container']}>
+      <span className={styles['selector-span']}>Country</span>
       <button
         type="button"
         onClick={toggleDropdown}
@@ -23,7 +24,10 @@ export const Selector = ({ options, onChange, value }: SelectorProps) => {
             className={styles['selector-option-button']}
             type="button"
             key={option.value}
-            onClick={() => onChange(option)}
+            onClick={() => {
+              onChange(option)
+              toggleDropdown()
+            }}
           >
             {option.label}
           </button>
