@@ -5,7 +5,10 @@ import { useLocalStorage } from '@/hooks/useLocalStorage/useLocalStorage';
 
 export const useLanguageButtonLogic = (): UseLanguageButtonLogicInterface => {
   const { i18n } = useTranslation();
-  const { value, setLocalStorageValue } = useLocalStorage({ key: 'language', initialValue: 'es' });
+  const { value, setLocalStorageValue } = useLocalStorage({
+    key: 'language',
+    initialValue: 'es',
+  });
   const [language, setLanguage] = useState(value);
   const [isOpenLanguageOptions, setIsOpenLanguageOptions] = useState(false);
 
