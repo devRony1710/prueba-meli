@@ -28,7 +28,7 @@ export const FormInfoTemplate: FC<FormInfoTemplateProps> = ({
     handleCaptchaVerify,
     captchaVerified,
     countries,
-  } = useFormInfo();
+  } = useFormInfo({ referrer, token });
 
   const countriesOptions = countries.map((country) => ({
     value: country.code,
@@ -104,9 +104,7 @@ export const FormInfoTemplate: FC<FormInfoTemplateProps> = ({
         <Button
           label={t('submitButton')}
           disabled={!isValid || !captchaVerified || !isValidParams}
-          onClick={() =>
-            navigate(`/checkout-success?referrer=${referrer}&token=${token}`)
-          }
+          type="submit"
         />
       </div>
     </form>

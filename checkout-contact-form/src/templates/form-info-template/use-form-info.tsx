@@ -9,14 +9,45 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { getCountriesList } from '@/api/get/get-countries-list/get-countries-list';
 import { useQuery } from '@tanstack/react-query';
 import { GET_COUNTRIES_LIST_KEY } from '@/common/request-contants/request-contants';
+import { useMutation } from '@tanstack/react-query';
+import { sendFormInfo } from '@/api/post/send-form-info/send-form-info';
+import { useNavigate } from 'react-router-dom';
 
-export const useFormInfo = (): UseFormInfoLogicInterface => {
+export const useFormInfo = ({
+  referrer,
+  token,
+}: {
+  referrer: string;
+  token: string;
+}): UseFormInfoLogicInterface => {
   const recaptchaRef = useRef<any>(null);
   const [captchaVerified, setCaptchaVerified] = useState(false);
+
+  const navigate = useNavigate();
 
   const { data: countries } = useQuery({
     queryKey: [GET_COUNTRIES_LIST_KEY],
     queryFn: () => getCountriesList(),
+  });
+
+  const { mutate } = useMutation({
+    mutationFn: () =>
+      sendFormInfo({
+        body: {
+          name: watch('name'),
+          address: watch('address'),
+          phone: watch('phone'),
+          country: watch('country').value,
+        },
+        referrer,
+        token,
+      }),
+    onSuccess: () => {
+      navigate(`/checkout-success?referrer=${referrer}&token=${token}`);
+    },
+    onError: () => {
+      navigate('/404');
+    },
   });
 
   const {
@@ -37,7 +68,7 @@ export const useFormInfo = (): UseFormInfoLogicInterface => {
       return;
     }
 
-    console.log('Form submitted');
+    mutate();
   };
 
   const handleCaptchaVerify = () => {
