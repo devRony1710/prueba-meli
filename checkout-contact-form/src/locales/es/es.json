@@ -7,5 +7,8 @@
     "countryLabel": "País",
     "selectAnOption": "Selecciona una opción",
     "cancelButton": "Cancelar",
-    "submitButton": "Enviar"
+    "submitButton": "Enviar",
+    "previousPageTitle": "Página anterior al checkout",
+    "previousPageButtonGoToCheckout": "Ir al checkout",
+    "previousPageButtonGoToCheckoutUser": "Ir al checkout user"
 }
