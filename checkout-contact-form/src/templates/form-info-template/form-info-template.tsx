@@ -1,16 +1,23 @@
 import { Input } from '@/components/input/input';
 import styles from './form-info-template-styles.module.css';
 import { Selector } from '@/components/selector/selector';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, type FC } from 'react';
 import { LoadingCircle } from '@/components/loading-circle/loading-circle';
 import { Button } from '@/components/button/button';
 import { useFormInfo } from './use-form-info';
 import { Controller } from 'react-hook-form';
 const ReCAPTCHA = lazy(() => import('react-google-recaptcha'));
 import { useTranslation } from 'react-i18next';
+import type { FormInfoTemplateProps } from './form-info-template.types';
+import { useNavigate } from 'react-router-dom';
 
-export const FormInfoTemplate = () => {
+export const FormInfoTemplate: FC<FormInfoTemplateProps> = ({
+  referrer,
+  token,
+  isValidParams,
+}) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const {
     recaptchaRef,
@@ -89,8 +96,14 @@ export const FormInfoTemplate = () => {
       </Suspense>
 
       <div className={styles['form-buttons-container']}>
-        <Button type="button" label={t('cancelButton')} />
-        <Button label={t('submitButton')} disabled={!isValid || !captchaVerified} />
+        <Button type="button" label={t('cancelButton')} onClick={() => navigate(-1)} />
+        <Button
+          label={t('submitButton')}
+          disabled={!isValid || !captchaVerified || !isValidParams}
+          onClick={() =>
+            navigate(`/checkout-success?referrer=${referrer}&token=${token}`)
+          }
+        />
       </div>
     </form>
   );

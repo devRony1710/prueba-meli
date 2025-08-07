@@ -55,3 +55,9 @@ export const formSchema = z.object({
         label: z.string(),
     })
 })
+
+export interface FormInfoTemplateProps {
+    referrer: string;
+    token: string;
+    isValidParams: boolean;
+}

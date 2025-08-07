@@ -5,11 +5,14 @@ import { FormInfoTitle } from '@/components/form-info-title/form-info-title';
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getValidateReferrerToken } from '@/api/get/validate-referrer-token/get-validate-referrer-token';
+import { useNavigate } from 'react-router-dom';
 
 export const CheckoutInfo = () => {
+  const navigate = useNavigate();
   const searchParams = new URLSearchParams(window.location.search);
   const referrerParam = searchParams.get('referrer');
   const tokenParam = searchParams.get('token');
+
   const [referrer, setReferrer] = useState('');
   const [token, setToken] = useState('');
 
@@ -19,8 +22,6 @@ export const CheckoutInfo = () => {
       getValidateReferrerToken(referrerParam as string, tokenParam as string),
   });
 
-  console.log(token, referrer);
-
   useEffect(() => {
     if (data) {
       setReferrer(data.data.referrer);
@@ -28,13 +29,19 @@ export const CheckoutInfo = () => {
     }
   }, [data]);
 
+  useEffect(() => {
+    if ((referrerParam === "" || referrerParam === null || tokenParam === "" || tokenParam === null) && !data?.success) {
+      navigate('/404');
+    }
+  }, [referrerParam, tokenParam, data?.success]);
+
   return (
     <section className={styles['checkout-info-container']}>
       <Navbar />
 
       <FormInfoTitle />
 
-      <FormInfoTemplate />
+      <FormInfoTemplate referrer={referrer} token={token} isValidParams={!!data?.success} />
     </section>
   );
 };
