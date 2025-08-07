@@ -1,0 +1,68 @@
+.language-button-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.language-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    font-weight: 500;
+}
+
+.language-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.language-button-options-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 8px;
+    gap: 8px;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slide-up 0.3s ease-in-out forwards;
+}
+
+.language-button-option {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.language-button-option:hover {
+    background-color: var(--color-yellow-meli);
+    color: #000;
+}
+
+@keyframes slide-up {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
