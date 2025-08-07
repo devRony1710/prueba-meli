@@ -33,8 +33,8 @@ app.get("/checkout-step", (req, res) => {
 })
 
 // Hacemos un fallback para asegurar que cualquier ruta que no exista redirija al index.html
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../checkout-contact-form/dist/index.html'));
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../../checkout-contact-form/dist/index.html'));
+// });
 
 export default app
