@@ -3,6 +3,7 @@ import path from "node:path"
 import {fileURLToPath} from "node:url"
 import checkoutRoutes from "./routes/checkout.routes.js"
 import countriesRoutes from "./routes/countries.routes.js"
+import usersRoutes from "./routes/users.routes.js"
 import cors from "cors"
 
 // Configuramos express
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, '../../checkout-contact-form/dist'))
 // Rutas de la api
 app.use("/api/checkout", checkoutRoutes)
 app.use("/api/countries", countriesRoutes)
+app.use("/api/users", usersRoutes)
 
 // Ruta especial para el checkout
 app.get("/checkout-step", (req, res) => {
