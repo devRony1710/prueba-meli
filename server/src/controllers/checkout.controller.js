@@ -34,6 +34,7 @@ export const getCheckoutInfo = (req, res) => {
 // Aqui estamos redirigiendo al usuario al siguiente paso
 export const nextStep = (req, res) => {
     const {referrer, token} = req.query
+    const {name, address, phone, country} = req.body
 
     if(!referrer || !token) {
         return res.status(400).json({
@@ -47,10 +48,14 @@ export const nextStep = (req, res) => {
 
     res.json({
         success: true,
-        message: "Checkout info received",
+        message: "Checkout success",
         data: {
             referrer,
-            token
+            token,
+            name,
+            address,
+            phone,
+            country
         }
     })
 }
