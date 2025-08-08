@@ -42,7 +42,7 @@ Esta POC también busca evidenciar mis habilidades como desarrollador, con un é
 ### Estructura del proyecto
 #### Frontend:
 ````bash
-├── checkout-contact-form/    # Frontend con React + Vite + TypeScript
+ checkout-contact-form/    # Frontend con React + Vite + TypeScript
 │   ├── src/
 │   │   ├── components/       # Componentes reutilizables
 │   │   ├── pages/            # Páginas de la SPA
@@ -51,19 +51,19 @@ Esta POC también busca evidenciar mis habilidades como desarrollador, con un é
 │   │   ├── hooks/            # Custom hooks
 │   │   ├── locales/            # Traducciones en formato json
 │   └── vite.config.ts        # Configuración de Vite y alias
-```
-#### Backend
+````
+#### Backend:
 ````bash
-server/                   # Backend con Node.js + Express
-    ├── src/
-    │   ├── routes/           # Definición de endpoints
-    │   ├── controllers/      # Lógica de negocio
-    │   ├── config/      # Configuración de dotenv
-    │   ├── middleware/      # Para validación de tokens
-    │   └── server/          # Inicialización del server
-    │   └── app.js          # Configuración principal de Express
-    └── package.json
-```
+├──server/                   # Backend con Node.js + Express
+│    ├── src/
+│    │   ├── routes/           # Definición de endpoints
+│    │   ├── controllers/      # Lógica de negocio
+│    │   ├── config/      # Configuración de dotenv
+│    │   ├── middleware/      # Para validación de tokens
+│    │   └── server/          # Inicialización del server
+│    │   └── app.js          # Configuración principal de Express
+│   └── package.json
+````
 
 
 ------------
