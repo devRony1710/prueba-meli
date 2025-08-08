@@ -10,7 +10,7 @@ import { getUserInfo } from '@/api/get/get-user-info/get-user-info';
 
 export const CheckoutInfo = ({ userMock }: { userMock?: boolean }) => {
   const navigate = useNavigate();
-  const searchParams = new URLSearchParams(window.location.search);
+  const searchParams = new URLSearchParams(window?.location?.search);
   const referrerParam = searchParams.get('referrer');
   const tokenParam = searchParams.get('token');
 
@@ -67,6 +67,7 @@ export const CheckoutInfo = ({ userMock }: { userMock?: boolean }) => {
             label: userData?.country?.label ?? '',
           },
           token: userData?.token ?? '',
+          captchaToken: userData?.captchaToken ?? '',
         }}
       />
     </section>
