@@ -32,6 +32,7 @@ Esta POC también busca evidenciar mis habilidades como desarrollador, con un é
 - Es necesario para correr el proyecto tener las siguientes variables de entorno
 ``VITE_RECAPTCHA_SITE_KEY=6LfFqZwrAAAAAPkkXEgq2alZjBQuyNVIUfTKChyz
 `` La api key será eliminada 14 días luego de entregar la prueba.
+- Para generar el build hacemos uso de **yarn build** y en caso de error, intentar con **yarn build:dev** ambos generan el estatico necesario para realizar la prueba (Leer descripción problema al generar build)
 
 ### Configuración backend
 - Desde la carpeta principal **/prueba-meli** procedemos a movernos a la carpeta **/server**
@@ -43,6 +44,7 @@ Esta POC también busca evidenciar mis habilidades como desarrollador, con un é
 - Es necesario para correr el proyecto tener las siguientes variables de entorno
 ``PORT=3000
 ``
+- Para tener la versión más reciente, desde el proyecto de react, genera el respectivo build para gener el archivo estatico, si el comando **yarn build** te lanza algún error, prueba intentando con **yarn build:dev**, ambos generan el estatico necesario para servirlo en el backend.
 ------------
 
 ### Estructura del proyecto
