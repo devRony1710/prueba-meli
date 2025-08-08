@@ -1,4 +1,4 @@
-# Prueba Tecnica Mercado Libre
+# Prueba Técnica Mercado Libre
 
 ## Descripción General
 Esta prueba de concepto (POC) tuvo como objetivo resolver el problema planteado en el documento técnico: la alta tasa de errores relacionados con la información de contacto en el proceso previo al checkout final.
@@ -32,7 +32,7 @@ Esta POC también busca evidenciar mis habilidades como desarrollador, con un é
 - Es necesario para correr el proyecto tener las siguientes variables de entorno
 ``VITE_RECAPTCHA_SITE_KEY=6LfFqZwrAAAAAPkkXEgq2alZjBQuyNVIUfTKChyz
 `` La api key será eliminada 14 días luego de entregar la prueba.
-- Para generar el build hacemos uso de **yarn build** y en caso de error, intentar con **yarn build:dev** ambos generan el estatico necesario para realizar la prueba (Leer descripción problema al generar build)
+- Para generar el build hacemos uso de **yarn build** y en caso de error, intentar con **yarn build:dev** ambos generan el estático necesario para realizar la prueba (Leer descripción del problema al generar build)
 
 ### Configuración backend
 - Desde la carpeta principal **/prueba-meli** procedemos a movernos a la carpeta **/server**
@@ -44,7 +44,7 @@ Esta POC también busca evidenciar mis habilidades como desarrollador, con un é
 - Es necesario para correr el proyecto tener las siguientes variables de entorno
 ``PORT=3000
 ``
-- Para tener la versión más reciente, desde el proyecto de react, genera el respectivo build para gener el archivo estatico, si el comando **yarn build** te lanza algún error, prueba intentando con **yarn build:dev**, ambos generan el estatico necesario para servirlo en el backend.
+- Para tener la versión más reciente, desde el proyecto de React, genera el respectivo build para generar el archivo estático, si el comando **yarn build** te lanza algún error, prueba intentando con **yarn build:dev**, ambos generan el estático necesario para servirlo en el backend.
 ------------
 
 ### Estructura del proyecto
@@ -106,10 +106,10 @@ En la prueba de concepto (POC) no implementé la configuración de traducciones 
 La verdad no tengo muy claro como podría implementar dicha alternativa, sin embargo buscando en el proceso encontre articulos que indicaban formas de SSR a través de frameworks como next cargando html previamente generado. Se que si aplico la investigación necesaria podría encontrar dicha solución, sin embargo no me quedo muy claro como implementarlo a nivel detallado en una primera instancia. 
 
 ### Ejemplo
-Video de ejemplo corriendo el servidor local del front en el proyecto checkout-contact-form pero a su vez corriendo el backend en el puerto 3000 para poder usar los endpoints y simular un ambiente de producción. También se puede hacer la misma prueba corriendo solo el entorno backend y accendiendo a localhost:3000, para esto primero es necesario generar el build desde el proyecto react (En caso de no tener la carpeta dist con el html previamente generado).
+Video de ejemplo corriendo el servidor local del frontend en el proyecto checkout-contact-form pero a su vez corriendo el backend en el puerto 3000 para poder usar los endpoints y simular un ambiente de producción. También se puede hacer la misma prueba corriendo solo el entorno backend y accediendo a localhost:3000, para esto primero es necesario generar el build desde el proyecto React (En caso de no tener la carpeta dist con el HTML previamente generado).
 https://github.com/user-attachments/assets/9225c80b-6155-441b-9565-ca4393379cd6
 
 
-## Informacion adicional
+## Información adicional
 En el siguiente enlace podrán encontrar documentación más detallada sobre el proyecto. Generada con ayuda de IA a través de github.
 https://deepwiki.com/devRony1710/prueba-meli/1-overview
