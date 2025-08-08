@@ -13,6 +13,7 @@ import { useMutation } from '@tanstack/react-query';
 import { sendFormInfo } from '@/api/post/send-form-info/send-form-info';
 import { useNavigate } from 'react-router-dom';
 import type { ResponseUserInfo } from '@/api/get/get-user-info/get-user-info.types';
+import toast from 'react-hot-toast';
 
 export const useFormInfo = ({
   referrer,
@@ -47,9 +48,11 @@ export const useFormInfo = ({
         token,
       }),
     onSuccess: () => {
+      toast.success('Form info sent successfully');
       navigate(`/checkout-success?referrer=${referrer}&token=${token}`);
     },
     onError: () => {
+      toast.error('An unexpected error occurred');
       navigate('/404');
     },
   });
