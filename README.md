@@ -108,3 +108,8 @@ La verdad no tengo muy claro como podría implementar dicha alternativa, sin emb
 ### Ejemplo
 Video de ejemplo corriendo el servidor local del front en el proyecto checkout-contact-form pero a su vez corriendo el backend en el puerto 3000 para poder usar los endpoints y simular un ambiente de producción. También se puede hacer la misma prueba corriendo solo el entorno backend y accendiendo a localhost:3000, para esto primero es necesario generar el build desde el proyecto react (En caso de no tener la carpeta dist con el html previamente generado).
 https://github.com/user-attachments/assets/9225c80b-6155-441b-9565-ca4393379cd6
+
+
+## Informacion adicional
+En el siguiente enlace podrán encontrar documentación más detallada sobre el proyecto. Generada con ayuda de IA a través de github.
+https://deepwiki.com/devRony1710/prueba-meli/1-overview
