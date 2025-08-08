@@ -104,3 +104,7 @@ En la prueba de concepto (POC) no implementé la configuración de traducciones 
 
 #### No script (alternativa)
 La verdad no tengo muy claro como podría implementar dicha alternativa, sin embargo buscando en el proceso encontre articulos que indicaban formas de SSR a través de frameworks como next cargando html previamente generado. Se que si aplico la investigación necesaria podría encontrar dicha solución, sin embargo no me quedo muy claro como implementarlo a nivel detallado en una primera instancia. 
+
+### Ejemplo
+Video de ejemplo corriendo el servidor local del front en el proyecto checkout-contact-form pero a su vez corriendo el backend en el puerto 3000 para poder usar los endpoints y simular un ambiente de producción. También se puede hacer la misma prueba corriendo solo el entorno backend y accendiendo a localhost:3000, para esto primero es necesario generar el build desde el proyecto react (En caso de no tener la carpeta dist con el html previamente generado).
+https://github.com/user-attachments/assets/9225c80b-6155-441b-9565-ca4393379cd6
