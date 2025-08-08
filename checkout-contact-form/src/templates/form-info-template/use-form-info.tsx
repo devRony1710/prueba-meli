@@ -14,6 +14,7 @@ import { sendFormInfo } from '@/api/post/send-form-info/send-form-info';
 import { useNavigate } from 'react-router-dom';
 import type { ResponseUserInfo } from '@/api/get/get-user-info/get-user-info.types';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 export const useFormInfo = ({
   referrer,
@@ -26,7 +27,7 @@ export const useFormInfo = ({
 }): UseFormInfoLogicInterface => {
   const recaptchaRef = useRef<any>(null);
   const [captchaVerified, setCaptchaVerified] = useState(false);
-
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const { data: countries } = useQuery({
@@ -48,11 +49,11 @@ export const useFormInfo = ({
         token,
       }),
     onSuccess: () => {
-      toast.success('Form info sent successfully');
+      toast.success(t('toastSuccess'));
       navigate(`/checkout-success?referrer=${referrer}&token=${token}`);
     },
     onError: () => {
-      toast.error('An unexpected error occurred');
+      toast.error(t('toastError'));
       navigate('/404');
     },
   });

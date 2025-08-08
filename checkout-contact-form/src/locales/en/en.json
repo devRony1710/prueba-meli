@@ -14,5 +14,7 @@
     "checkoutSuccessTitle": "Checkout success",
     "checkoutSuccessButton": "Go to home",
     "pageNotFound": "Page not found",
-    "backToHome": "Back to home"
+    "backToHome": "Back to home",
+    "toastSuccess": "Form info sent successfully",
+    "toastError": "An unexpected error occurred"
 }

@@ -14,5 +14,7 @@
     "checkoutSuccessTitle": "Checkout exitoso",
     "checkoutSuccessButton": "Volver al inicio",
     "pageNotFound": "Página no encontrada",
-    "backToHome": "Volver al inicio"
+    "backToHome": "Volver al inicio",
+    "toastSuccess": "Información del formulario enviada exitosamente",
+    "toastError": "Error inesperado"
 }
