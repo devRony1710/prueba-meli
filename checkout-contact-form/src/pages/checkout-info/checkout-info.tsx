@@ -7,6 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import { getValidateReferrerToken } from '@/api/get/validate-referrer-token/get-validate-referrer-token';
 import { useNavigate } from 'react-router-dom';
 import { getUserInfo } from '@/api/get/get-user-info/get-user-info';
+import { GET_USER_INFO_KEY, GET_VALIDATE_REFERRER_TOKEN_KEY } from '@/common/request-contants/request-contants';
 
 export const CheckoutInfo = ({ userMock }: { userMock?: boolean }) => {
   const navigate = useNavigate();
@@ -18,13 +19,13 @@ export const CheckoutInfo = ({ userMock }: { userMock?: boolean }) => {
   const [token, setToken] = useState('');
 
   const { data } = useQuery({
-    queryKey: ['validate-referrer-token', referrerParam, tokenParam],
+    queryKey: [GET_VALIDATE_REFERRER_TOKEN_KEY, referrerParam, tokenParam],
     queryFn: () =>
       getValidateReferrerToken(referrerParam as string, tokenParam as string),
   });
 
   const { data: userData } = useQuery({
-    queryKey: ['user-info', referrerParam, tokenParam, userMock],
+    queryKey: [GET_USER_INFO_KEY, referrerParam, tokenParam, userMock],
     queryFn: () => getUserInfo(tokenParam as string, referrerParam as string),
     enabled: !!userMock,
   });
